@@ -13,3 +13,12 @@ house_fly = "Compound Noun" #snake_case
 name = "Dan"
 Name = 2
 
+number = 45
+
+country = "Japan"
+multiple_sent = '''
+this is the first string
+second string
+third
+'''
+laptop = 'Macbook'
