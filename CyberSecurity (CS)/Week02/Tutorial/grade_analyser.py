@@ -1,4 +1,4 @@
-score = int(input("Enter your score: "))
+score = int(input("Enter your score: ")) # 90
 grade = "F"
 
 if (score > 90):

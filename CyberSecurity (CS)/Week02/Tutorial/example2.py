@@ -5,3 +5,6 @@ print(vat_amt)
 total_price = price + vat_amt
 
 print(f"Total price is {total_price}")
+
+print(20 % 6)
+print(20 // 6)
