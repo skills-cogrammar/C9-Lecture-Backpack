@@ -4,7 +4,7 @@ Functions in python
 
 def addition1():
     """
-    Function body: the step by step 
+    Function body: the step by step
     guidance on what the function does.
     Return: breaks the function and returns a value as instructed
     """
@@ -15,7 +15,7 @@ def addition1():
 addition1() # Function call
 
 
-def addition(num1, num2):
+def addition2(num1, num2):
     """
     Function Parameters: What the function expects
     Function arguments: Actual data/values passed to functions
@@ -25,7 +25,7 @@ def addition(num1, num2):
 
 x = 10
 y = 20
-addition(x, y)
+addition2(x, y)
 
 
 """
@@ -34,8 +34,7 @@ Local scopes: Variables declared within a block
 Global scopes: Variables that can be accessed throughout the file (globally)
 """
 
-
-def addition():
+def addition3():
     """
     Variables x and y are locally scoped
     """
@@ -60,7 +59,7 @@ for i in range(0, 10):
 x = 10
 y = 20
 
-def addition():
+def addition4():
     result = x + y
     return result
 
@@ -68,13 +67,13 @@ print(x)
 
 
 # Using the global keyword
-def addition():
+def addition5():
     global x
     x = 10
     y = 20
     return x + y
 
-addition()
+addition5()
 print(x)
 
 
