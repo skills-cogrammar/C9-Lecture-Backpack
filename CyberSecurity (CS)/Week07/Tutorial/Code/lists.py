@@ -3,11 +3,15 @@ int_list = [1, 2, 3, 4, 5]
 float_list = [1.2, 2.4, 3.0, 2.5, 2.1]
 mixed_list = [1, "Hello", True, 3.4]
 
+hobbies = ["swimming", "singing", "playing football"]
+
 # Ask student to create a list that contains their favourite movies
 favourite_movies = ["movie 1", "movie 2", "movie 3", "movie 4"]
 
 # Adding a new movie
 favourite_movies.append("movie 5")
+
+print(favourite_movies)
 
 favourite_movies.insert(2, "movie 6")
 
