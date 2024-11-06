@@ -1,0 +1,21 @@
+Reverse a linked list
+- Linked list we store the head node
+- Assuming its a singly ll
+- The last element is now the head element
+
+head -> prev
+head.next -> current
+
+next = current.next
+current.next = prev
+
+current -> prev
+next -> current
+
+next = current.next
+current.next = prev
+
+stop when current.next = None 
+
+return current
+
