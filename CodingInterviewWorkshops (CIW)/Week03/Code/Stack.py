@@ -34,10 +34,16 @@ stack = Stack(10)
 
 # Test the underflow error
 stack.pop()
+print(stack.stack)
 
 # Add some elements to the stack
 stack.push(2)
 stack.push(13)
+print(stack.stack)
 
 # Remove an element from the stack
-stack.pop()
+print(stack.pop())
+print(stack.stack)
+
+stack.push(145)
+print(stack.stack)
