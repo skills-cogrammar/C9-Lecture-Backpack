@@ -11,13 +11,16 @@ class Node:
         self.value = value
         self.next = None
 
+    def __str__(self) -> str:
+        return (str(self.key) + " " + str(self.value) + " " + str(self.next))
+
 class HashTable:
     # Initialise the Hash Table of arbitary size
     # Use numpy empty array for the associative array
     def __init__(self, capacity = 20):
         self.capacity = capacity
         self.size = 0
-        self.buckets = np.empty(capacity, dtype=Node)
+        self.associated_array = np.empty(capacity, dtype=Node)
     
     # We will be using the built in hash function
     # Since this returns integers of arbitray sizes, we 
@@ -32,14 +35,19 @@ class HashTable:
         index = self.__hash(key)
 
         # Check if there is a collision
-        node = self.buckets[index]
+        node = self.associated_array[index]
         if (node == None):
-            self.buckets[index] = Node(key, value)
+            self.associated_array[index] = Node(key, value)
             self.size += 1
         else:
             # If there is a collision, check for same key or
             # add to end of linked list and increment size
             print("Collision at position", index)
+
+            # self.associated_array[index] = Node(key, value)
+            # self.associated_array[index].next = node
+            # self.size += 1
+
             while (node.next != None) and (node.key != key):
                 node = node.next
             
@@ -56,7 +64,7 @@ class HashTable:
 
         # Check the bucket and retrieve the correct value
         # Return None if the key is not in the hash table
-        node = self.buckets[index]
+        node = self.associated_array[index]
         if (node == None):
             return None
         else:
@@ -74,7 +82,7 @@ class HashTable:
 
         # Check the bucket and remove the correct node
         # Return None if the key is not in the hash table
-        node = self.buckets[index]
+        node = self.associated_array[index]
         prev = None
         if (node == None):
             return None
@@ -88,11 +96,16 @@ class HashTable:
             # Relink the list if a node is removed midlist
             self.size -= 1
             if prev == None:
-                self.buckets[index] = node.next
+                self.associated_array[index] = node.next
             else:
                 prev.next = node.next
 
             return node.value
+        
+    def printTable(self):
+        for node in self.associated_array:
+            print(node)
+
 
 # Example hashtable to test code which stores names and ages
 hashtable = HashTable(5)
@@ -105,10 +118,13 @@ print(hashtable.get("Zahra"))
 hashtable.set("Zahra", 24)
 print(hashtable.get("Zahra"))
 
+
 hashtable.set("Anri", 21)
 hashtable.set("Jack", 56)
 hashtable.set("Amy", 7)
 hashtable.set("Thandi", 19)
+
+hashtable.printTable()
 
 # Test that element is still in array
 print(hashtable.get("Thandi"))
@@ -118,12 +134,17 @@ hashtable.set("Thandi", 20)
 # Test that element is still in array
 print(hashtable.get("Thandi"))
 
+hashtable.printTable()
+
 # Test removing elements
 hashtable.remove("Zahra")
 print(hashtable.get("Zahra"))
 
 # Test that element is still in array
 print(hashtable.get("Thandi"))
+
+hashtable.printTable()
+
 
 
 
