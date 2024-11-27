@@ -1,0 +1,8 @@
+Hello!
+
+In this task, my goal is to emulate the following commands using python:
+-cat
+-grep
+-echo
+
+I am most likely going to make use of the os and the sys libraries to help me.

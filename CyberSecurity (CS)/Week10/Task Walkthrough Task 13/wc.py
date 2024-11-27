@@ -1,5 +1,7 @@
 import sys
 
+
+# Defining the word counter function
 def wc(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
@@ -9,4 +11,6 @@ def wc(file_path):
 
         print(f"{line_counter} {word_counter} {char_counter}")
 
+
+# Calling the word counter function
 wc(sys.argv[1])
