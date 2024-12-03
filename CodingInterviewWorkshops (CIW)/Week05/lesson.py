@@ -21,7 +21,7 @@ class MinHeap:
 
     def parent(self, i):
         return (i - 1) // 2
-
+ 
     def left_child(self, i):
         return 2 * i + 1
 
@@ -174,3 +174,25 @@ def kth_smallest(root, k):
         if not k:
             return root.val
         root = root.right
+
+
+rootBST = insert(None, 12)
+insert(rootBST, 4)
+insert(rootBST, 9)
+insert(rootBST, 24)
+insert(rootBST, 1)
+insert(rootBST, 90)
+insert(rootBST, 13)
+
+inorder_traversal(rootBST)
+preorder_traversal(rootBST)
+postorder_traversal(rootBST)
+level_order_traversal(rootBST)
+
+'''
+    12
+   /   \
+  4     24
+ / \   /  \
+1  9  13   90
+'''
