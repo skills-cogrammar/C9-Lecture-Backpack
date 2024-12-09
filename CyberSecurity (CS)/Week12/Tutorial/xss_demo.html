@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflective XSS Demo</title>
+</head>
+<body>
+    <h1>Reflective XSS Exploitation Demo</h1>
+    <img src="jibberish" onerror="alert('This is an XSS Attack!')">
+    <form id="xssForm" onsubmit="handleSubmit(event)">
+        <label for="input">Enter your name:</label>
+        <input type="text" id="input" name="name">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        function handleSubmit(event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+
+            // Capture user input
+            const userInput = document.getElementById('input').value;
+
+            // Reflect the input directly into the output
+            document.getElementById('output').innerHTML = `<h2>Welcome, ${userInput}</h2>`;
+        }
+    </script>
+</body>
+</html>
