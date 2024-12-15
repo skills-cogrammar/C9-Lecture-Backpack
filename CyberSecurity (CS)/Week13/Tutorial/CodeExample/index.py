@@ -23,7 +23,7 @@ cursor.execute('''
         description TEXT,
         complete TEXT DEFAULT 'incomplete',
         owner VARCHAR(50),
-        date_created TEXT
+        date_created DATETIME DEFAULT CURRENT_TIMESTAMP
     )
 ''')
 
@@ -31,9 +31,9 @@ cursor.execute('''
 def add_task(task_name, task_description, task_owner):
     cursor.execute('''
             INSERT INTO todo 
-            VALUES (?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
             ''', 
-            (5, task_name, task_description,'incomplete', task_owner, '2024/12/12')
+            (5, task_name, task_description,'incomplete', task_owner)
             )
     db.commit()
 
