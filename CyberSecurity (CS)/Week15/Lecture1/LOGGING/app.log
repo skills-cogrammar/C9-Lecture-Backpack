@@ -1,0 +1,15 @@
+2024-12-23 23:41:24,818 - INFO - Application has started
+2024-12-23 23:41:24,818 - INFO - Starting the process_number function.
+2024-12-23 23:41:24,818 - DEBUG - Processing index 0: number=10
+2024-12-23 23:41:24,818 - INFO - Successfully processed index 0: square=100
+2024-12-23 23:41:24,818 - DEBUG - Processing index 1: number=20
+2024-12-23 23:41:24,818 - INFO - Successfully processed index 1: square=400
+2024-12-23 23:41:24,818 - DEBUG - Processing index 2: number=30
+2024-12-23 23:41:24,818 - ERROR - Error in processing index 2: Invalid number at index 2: number=30
+2024-12-23 23:41:24,818 - DEBUG - Processing index 3: number=100
+2024-12-23 23:41:24,818 - INFO - Successfully processed index 3: square=10000
+2024-12-23 23:41:24,818 - DEBUG - Processing index 4: number=-10
+2024-12-23 23:41:24,818 - INFO - Successfully processed index 4: square=100
+2024-12-23 23:41:24,818 - INFO - Finished processing numbers
+2024-12-23 23:41:24,818 - INFO - Final results: [100, 400, 10000, 100]
+2024-12-23 23:41:24,818 - INFO - Application has finished.
